@@ -63,6 +63,19 @@ Divisi ini menggunakan **Mission Planner**, sebuah software untuk:
 
 ---
 
+### 🧩 Keterampilan Teknis yang Dibutuhkan
+
+Seorang programmer di IRC perlu menguasai beberapa keterampilan teknis, antara lain:
+
+- **Bahasa Pemrograman:** C/C++, Python
+- **Sensor & Aktuator:** Motor, servo, sensor IR, dll.
+- **Komunikasi:** UART, I2C, SPI, Bluetooth/Wi-Fi
+- **Mikrokontroler:** Arduino, ESP32, dan lainnya
+
+> 💡 Keterampilan ini adalah fondasi penting dalam merancang sistem robotika.
+
+---
+
 ### 🔁 Flowchart & Pseudocode
 
 Sebelum menulis program, kita perlu memahami **alur logika program** melalui _flowchart_ dan _pseudocode_.
