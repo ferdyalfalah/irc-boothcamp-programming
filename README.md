@@ -226,7 +226,116 @@ Pull Request (PR) adalah cara untuk:
 
 > 💡 Pemilihan jenis mikrokontroler tergantung pada kebutuhan proyek. Tidak semua aplikasi membutuhkan board paling canggih—yang terpenting adalah **kecocokan dengan tugas dan efisiensi penggunaan**.
 
+---
+---
 
+## Penjelasan Kode Arduino/ESP32
 
+### Program Arduino: Sensor Ultrasonik dan servo
+
+Program ini menggunakan **sensor ultrasonik HC-SR04** untuk mengukur jarak benda di depannya. Jika jarak benda tersebut **kurang dari 40 cm**, maka Arduino akan:
+
+- **Menyalakan kipas** (atau LED sebagai pengganti kipas),
+- **Menggerakkan motor servo** dari sudut 0° ke 180°, lalu kembali ke 0°, secara terus-menerus selama benda masih berada dalam jarak dekat.
+
+#### 💡 **Cara Kerja Program**
+
+##### 1. **Inisialisasi:**
+Arduino menyiapkan semua pin yang dibutuhkan, termasuk pin untuk sensor ultrasonik, kipas, dan servo. Ini dilakukan di dalam fungsi `setup()`. 
+
+##### 2. **Pengukuran Jarak:**
+Dalam proses `loop()` (yang berjalan terus-menerus), sensor ultrasonik mengirimkan gelombang suara, dan Arduino mengukur waktu pantulan gelombang tersebut. Waktu pantulan ini digunakan untuk menghitung **jarak objek** yang terdeteksi di depan sensor.
+
+##### 3. **Pengaturan Servo:**
+- Jika jarak objek **kurang dari 40 cm**, maka kipas akan **menyala** dan servo akan mulai **bergerak bolak-balik**.
+  - Servo bergerak dari sudut **0° ke 180°**, lalu kembali dari **180° ke 0°**.
+  - Gerakan ini akan terus diulang selama objek masih berada dalam jarak dekat.
+  
+- Setelah setiap gerakan servo, sensor akan **memperbarui jaraknya**. Jika objek tetap dekat, servo akan terus bergerak. 
+- Jika objek sudah menjauh (jaraknya lebih dari atau sama dengan 40 cm), maka kipas akan dimatikan dan servo berhenti bergerak.
+
+#### 🧠 **Ringkasan Alur Program:**
+
+1. **Sensor mengukur jarak**.
+2. Jika **jarak < 40 cm**:
+   - Kipas **nyala**.
+   - Servo **bergerak bolak-balik**.
+3. Jika **jarak ≥ 40 cm**:
+   - Kipas **mati**.
+   - Servo **berhenti**.
+
+#### 🎯 **Aplikasi Program:**
+Program ini bisa digunakan sebagai simulasi untuk sistem otomatis sederhana seperti:
+- Penyemprot otomatis,
+- Pembuka pintu otomatis,
+- Alat interaktif yang merespon gerakan.
+
+#### 🔧 **Cara Menjalankan Program:**
+
+1. **Buka Arduino IDE**.
+2. **Salin kode** ke dalam Arduino IDE.
+3. Sambungkan **sensor ultrasonik**, **servo**, dan **kipas** ke pin yang sesuai.
+4. Pilih **Board Arduino** dan **Port** yang sesuai.
+5. Klik **Upload** untuk memuat kode ke papan Arduino.
+
+#### ⚡ **Sumber Daya yang Dibutuhkan:**
+
+- Arduino Uno (atau papan Arduino lain)
+- Sensor Ultrasonik HC-SR04
+- Motor Servo
+- Kipas atau LED
+- Kabel Jumper
+
+---
+
+### Program Arduino: Kontrol LED Bergantian
+
+Program ini mengontrol 5 pin digital pada Arduino untuk menyalakan dan mematikan perangkat (seperti LED) yang terhubung ke pin tersebut secara bergantian. Setiap pin menyala selama 1 detik dan mati selama 1 detik.
+
+#### 💡 **Tujuan Program**
+
+- **Menyalakan dan mematikan perangkat (seperti LED)** yang terhubung ke pin digital 8, 9, 10, 11, dan 12 secara bergantian.
+- Setiap pin akan menyala selama **1 detik** dan mati selama **1 detik**.
+- Program ini akan terus berjalan dan mengulangi proses ini secara **berulang** tanpa henti.
+
+#### 🧠 **Penjelasan Program**
+
+##### 1. **Inisialisasi Pin**
+Di dalam fungsi `setup()`, program mengatur pin-pin digital 8, 9, 10, 11, dan 12 sebagai **OUTPUT**. Ini berarti Arduino akan mengirimkan sinyal untuk mengendalikan perangkat yang terhubung ke pin-pinn tersebut, seperti LED.
+
+##### 2. **Pengaturan Pin dalam `loop()`**
+Pada bagian `loop()`, program menyalakan dan mematikan pin-pin tersebut satu per satu. Prosesnya adalah sebagai berikut:
+- Pin dinyalakan selama **1 detik** (`HIGH`).
+- Setelah itu, pin dimatikan selama **1 detik** (`LOW`).
+- Proses ini diulang untuk pin 8, kemudian pin 9, pin 10, pin 11, dan pin 12.
+
+##### 3. **Proses Berulang**
+Seluruh proses dalam `loop()` akan berjalan terus menerus selama Arduino menyala. Pin-pin tersebut akan menyala dan mati secara bergantian tanpa henti karena `loop()` akan mengulang terus.
+
+#### 🔄 **Alur Program**
+
+1. Pin 8 menyala selama 1 detik, lalu mati selama 1 detik.
+2. Pin 9 menyala selama 1 detik, lalu mati, diikuti dengan pin 10, 11, dan 12.
+3. Proses ini akan **berulang terus menerus** karena berada dalam fungsi `loop()`.
+
+#### 🎯 **Kesimpulan**
+
+- Program ini mengendalikan 5 pin digital pada Arduino untuk menyala dan mati secara bergantian.
+- Setiap pin menyala selama **1 detik** dan mati selama **1 detik**.
+- Program ini **berjalan terus-menerus** karena berada dalam fungsi `loop()`, yang membuatnya berulang tanpa henti.
+
+#### 🔧 **Cara Menjalankan Program**
+
+1. **Buka Arduino IDE**.
+2. **Salin kode** ke dalam Arduino IDE.
+3. Sambungkan **LED** atau perangkat lain ke pin digital 8, 9, 10, 11, dan 12.
+4. Pilih **Board Arduino** dan **Port** yang sesuai.
+5. Klik **Upload** untuk memuat kode ke papan Arduino.
+
+#### ⚡ **Sumber Daya yang Dibutuhkan:**
+
+- Arduino Uno (atau papan Arduino lain)
+- 5 LED (atau perangkat lain)
+- Kabel Jumper
 
 
