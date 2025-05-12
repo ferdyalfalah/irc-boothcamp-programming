@@ -99,6 +99,64 @@ For i ← 1 to n:
 
 ---
 
+### Data Types & Variable
+
+| Fitur             | Arduino (C/C++)                                 | Python                                   |
+|------------------|--------------------------------------------------|------------------------------------------|
+| Tipe Data         | Harus dideklarasikan (int, float, char, dll)    | Otomatis ditentukan (int, float, str)    |
+| Deklarasi         | `int ledPin = 13;`                               | `ledPin = 13`                             |
+| Skop              | Global atau lokal                                | Global atau lokal                         |
+| Sintaks           | Ketat,  tipe data eksplisit                      | Fleksibel dan sederhana                   |
+
+---
+
+### Arithmetic Operators
+
+| Operator | Fungsi       | Contoh     |
+|----------|--------------|------------|
+| `+`      | Penjumlahan  | `5 + 3 = 8`|
+| `-`      | Pengurangan  | `5 - 3 = 2`|
+| `*`      | Perkalian    | `5 * 3 = 15`|
+| `/`      | Pembagian    | `5 / 2 = 2.5`|
+| `%`      | Modulo       | `5 % 2 = 1`|
+
+---
+
+### Comparison Operators
+
+| Operator | Fungsi              | Contoh        |
+|----------|---------------------|---------------|
+| `==`     | Sama dengan         | `5 == 5` → `True` |
+| `!=`     | Tidak sama dengan   | `5 != 3` → `True` |
+| `>`      | Lebih besar         | `5 > 3` → `True` |
+| `<`      | Lebih kecil         | `5 < 3` → `False` |
+| `>=`     | Lebih besar sama    | `5 >= 5` → `True` |
+| `<=`     | Lebih kecil sama    | `3 <= 5` → `True` |
+
+---
+
+### Boolean Operators
+
+| Operator | Fungsi       | Contoh                    |
+|----------|--------------|---------------------------|
+| `and`    | Dan          | `True and False` → `False` |
+| `or`     | Atau         | `True or False` → `True`   |
+| `not`    | Negasi       | `not True` → `False`       |
+
+---
+
+### Control Statements
+
+| S.NO. | Control Statement & Description |
+|-------|----------------------------------|
+| **1** | **If statement**<br>It takes an expression in parenthesis and a statement or block of statements. If the expression is true then the statement or block of statements gets executed otherwise these statements are skipped. |
+| **2** | **If ...else statement**<br>An if statement can be followed by an optional else statement, which executes when the expression is false. |
+| **3** | **If...else if ...else statement**<br>The if statement can be followed by an optional else if...else statement, which is very useful to test various conditions using single if...else if statement. |
+| **4** | **switch case statement**<br>Similar to the if statements, switch...case controls the flow of programs by allowing the programmers to specify different codes that should be executed in various conditions. |
+| **5** | **Conditional Operator ? :**<br>The conditional operator ? : is the only ternary operator in C. |
+
+---
+
 ### 🛠️ Toolchain yang Digunakan
 
 Toolchain adalah kumpulan software/alat yang mendukung proses pemrograman dan pengembangan sistem. Berikut adalah beberapa tools yang biasa digunakan:
