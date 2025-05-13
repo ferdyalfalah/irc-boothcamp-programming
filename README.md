@@ -19,6 +19,9 @@
 - ⚡ Fun fact: Weekend mode: gaming 🎮, YouTube watching (mostly game videos) 🍿, professional level rebahan 🛌, and frequent hibernation 🦥—will update when I decide to be productive 😴  
 
 
+---
+
+
 ## 💻 Resume Bootcamp #2 - Divisi Programming  
 
 ### 🧠 Pengenalan Divisi Pemrograman
