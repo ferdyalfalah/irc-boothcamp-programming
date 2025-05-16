@@ -349,3 +349,37 @@ Seluruh proses dalam `loop()` akan berjalan terus menerus selama Arduino menyala
 
 **Servo :** [Servo](https://wokwi.com/projects/430760569470584833)
 
+---
+---
+
+## Kamera Real-Time dengan Nama Peserta menggunakan Python & OpenCV
+
+Program sederhana ini menggunakan Python dan OpenCV untuk mengakses kamera laptop, menampilkan video secara langsung, sekaligus menampilkan nama peserta di layar.
+
+### Fitur Utama
+
+- Mengaktifkan kamera laptop secara real-time  
+- Menampilkan video langsung di jendela aplikasi  
+- Menambahkan teks nama peserta di atas video  
+- Keluar dari program dengan menekan tombol `q`  
+- Menutup kamera dan jendela dengan rapi saat selesai  
+
+### Cara Kerja Program
+
+1. **Membuka Kamera**  
+   Program memulai dengan membuka kamera utama laptop dan memastikan kamera dapat diakses dengan benar.
+
+2. **Pengambilan Gambar Berkelanjutan**  
+   Program kemudian masuk ke dalam loop yang mengambil gambar secara terus-menerus dari kamera.
+
+3. **Menambahkan Teks pada Video**  
+   Setiap gambar yang diambil diberi teks berupa nama peserta di posisi yang telah ditentukan agar mudah terlihat.
+
+4. **Menampilkan Video**  
+   Gambar dengan teks kemudian ditampilkan secara real-time di sebuah jendela aplikasi.
+
+5. **Mekanisme Keluar**  
+   Program terus berjalan hingga pengguna menekan tombol `q` pada keyboard, yang akan menghentikan loop pengambilan gambar.
+
+6. **Penutupan Kamera dan Jendela**  
+   Setelah loop berhenti, program melepaskan kamera dan menutup semua jendela yang terbuka secara bersih dan rapi.
